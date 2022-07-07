@@ -18,5 +18,6 @@ def run_app():
             print('\n')
         elif prompt == 3:
             run = False
-        else:
+        elif prompt < 1 or prompt > 3:
+            print("Invalid Entry")
             continue

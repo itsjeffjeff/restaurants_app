@@ -1,26 +1,30 @@
-from table_dict import tables
-from menus import menu_list
+from functions.table_dict import tables
+from functions.menus import menu_list
 
 #######################~~Questions~~#########################
 prompt_question = "1: Update Business Information | 2: View Business Information  | 3: Quit"
 
 
 def update_business(business):
-    updating = True
-    while updating is True:
-        print('[1] Change name \n[2] Change Address \n[3] Change Phone Number \n[4] Change Hours\n[5] Go Back')
-        prompt = int(input("What would you like to update?"))
-        if prompt == 1:
-            business.name = input("New Name: ")
-        elif prompt == 2:
-            business.address = input("New Address: ")
-        elif prompt == 3:
-            business.phone_number = input("New Phone Number: ")
-        elif prompt == 4:
-            business.open = input("New Open Time: ")
-            business.closed = input("New Close Time: ")
-        elif prompt == 5:
-            break
+    try:
+        updating = True
+        while updating is True:
+            print('[1] Change name \n[2] Change Address \n[3] Change Phone Number \n[4] Change Hours\n[5] Go Back')
+            prompt = int(input("What would you like to update? >>"))
+            if prompt == 1:
+                business.name = input("New Name: ")
+            elif prompt == 2:
+                business.address = input("New Address: ")
+            elif prompt == 3:
+                business.phone_number = input("New Phone Number: ")
+            elif prompt == 4:
+                business.open = input("New Open Time: ")
+                business.closed = input("New Close Time: ")
+            elif prompt == 5:
+                break
+    except ValueError:
+        print("\n***Invalid Entry***\n")
+        update_business(business)
 
 
 def program():
@@ -30,7 +34,6 @@ def program():
 
 
 class Restaurant:
-
 
     def __init__(self, name, address, phone_number, opening, close):
         self.name = name
