@@ -1,3 +1,3 @@
-# resturant_app
+# restaurants_app
 Back-end for app
 This is a test software
