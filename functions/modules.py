@@ -1,10 +1,39 @@
-from functions.table_dict import tables
-from functions.menus import menu_list
+#######################~~Table Dictionary~~#########################
+tables = {
+    1: {
+        # "name": 'Sides, Jeff',
+        # "VIP_Status": True,
+        # "Reservation": "17:30",
+        # 'Order': [('Burger', 35.5), ('Water', 2.25)],
+        # "Split/Bill: $XX.XX"
+        # "Tip: $XX:XX"
+    },
+    2: {},
+    3: {},
+    4: {},
+    5: {},
+}
+
+
+#######################~~Menu Dictionary~~#########################
+def menu(number):
+    menu_dict = {
+        1: ("Burger", 35.50),
+        2: ("Taco", 15.50),
+        3: ("Soda", 3.00),
+        4: ("Water", 2.25)
+    }
+    return menu_dict[number]
+
+
+menu_list = [menu(1), menu(2), menu(3), menu(4)]
 
 #######################~~Questions~~#########################
-prompt_question = "1: Update Business Information | 2: View Business Information  | 3: Quit"
+settings_questions = "1: Update Business Information | 2: View Business Information  | 3: Start Main App | 4: Quit "
+table_management = "1: Assign Table | 2: Assign Order | 3: Print Check | 4: View Table Information |5: Remove Table"
 
 
+#######################~~Functions~~#########################
 def update_business(business):
     try:
         updating = True
@@ -33,6 +62,7 @@ def program():
     return build
 
 
+#######################~~Classes~~#########################
 class Restaurant:
 
     def __init__(self, name, address, phone_number, opening, close):
